@@ -27,7 +27,7 @@ def button(txt, x, y, w, h, hover, col, task):
 
 def game_over(score):
     pygame.display.set_caption("Game Over")
-    bg_intro = pygame.image.load('bg_intro.jpg')
+    bg_intro = pygame.image.load('media/bg_intro.jpg')
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -50,9 +50,9 @@ def game_over(score):
 
 
 def game_loop_():
-    pygame.mixer.music.load("game_music.mp3")
+    pygame.mixer.music.load("media/game_music.mp3")
     pygame.mixer.music.play(loops=-1)
-    game_over_sound = pygame.mixer.Sound("game_over.ogg")
+    game_over_sound = pygame.mixer.Sound("media/game_over.ogg")
 
     bg = pygame.image.load('bg.png')
 
