@@ -15,14 +15,14 @@ pygame.font.init()
 screen = pygame.display.set_mode((screenW, screenH))
 clock = pygame.time.Clock()
 
-jump_sound = pygame.mixer.Sound("birdjump.ogg")
+jump_sound = pygame.mixer.Sound("media/birdjump.ogg")
 
 
 class Player(pygame.sprite.Sprite):
 
     def __init__(self):
         super(Player, self).__init__()
-        self.surf = pygame.image.load('bird.png').convert_alpha()
+        self.surf = pygame.image.load('media/bird.png').convert_alpha()
         self.rect = self.surf.get_rect(
             center=(
                 60, screenH / 2
@@ -33,14 +33,14 @@ class Player(pygame.sprite.Sprite):
         self.rect.move_ip(0, 4)
 
     def reset(self):
-        self.surf = pygame.image.load('birdj.png').convert_alpha()
+        self.surf = pygame.image.load('media/birdj.png').convert_alpha()
 
     def update(self, key_pressed):
         # Jumping
         if key_pressed[K_SPACE]:
             jump_sound.play()
             self.rect.move_ip(0, -25)
-            self.surf = pygame.image.load('bird.png').convert_alpha()
+            self.surf = pygame.image.load('media/bird.png').convert_alpha()
         # make sure bird stays on screen
         if self.rect.left < 0:
             self.rect.left = 0
@@ -55,7 +55,7 @@ class Player(pygame.sprite.Sprite):
 class TopPipe(pygame.sprite.Sprite):
     def __init__(self):
         super(TopPipe, self).__init__()
-        self.surf = pygame.image.load('pipedownu.png').convert_alpha()
+        self.surf = pygame.image.load('media/pipedownu.png').convert_alpha()
         self.rect = self.surf.get_rect(
             center=(
                 (screenW + 50),
@@ -74,7 +74,7 @@ class TopPipe(pygame.sprite.Sprite):
 class BottomPipe(pygame.sprite.Sprite):
     def __init__(self):
         super(BottomPipe, self).__init__()
-        self.surf = pygame.image.load('pipeupu.png').convert_alpha()
+        self.surf = pygame.image.load('media/pipeupu.png').convert_alpha()
         self.rect = self.surf.get_rect(
             center=(
                 (screenW + 50),
