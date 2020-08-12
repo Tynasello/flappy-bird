@@ -3,7 +3,7 @@ from game_loop import *
 
 def game_intro():
     pygame.display.set_caption("Main Menu")
-    bg_intro = pygame.image.load('bg_intro.jpg')
+    bg_intro = pygame.image.load('media./bg_intro.jpg')
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
